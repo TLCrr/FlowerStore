@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/Util/JDBCUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/dao/FlowerDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/dao/MessageDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/dao/OrderDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/dao/UserDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/dao/impl/FlowerDaoimpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/dao/impl/MessageDaoimpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/dao/impl/OrderDaoimpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/dao/impl/UserDaoimpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/filter/FlowerFilter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/pojo/Flower.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/pojo/Message.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/pojo/Order.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/pojo/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/FlowerServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/LoginServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/MessageServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/OnlineListener.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/OrderServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/RegisterServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/RegisteruserServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/UserServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/change_passwordServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/TLC/servlet/findUserServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/css/css" charset="GBK" />
+  </component>
+</project>
