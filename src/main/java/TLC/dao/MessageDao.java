@@ -10,4 +10,7 @@ public interface MessageDao {
     //显示留言的信息
     public int addMessage(Message message);
     //添加留言到数据库
+
+    interface Shopping_cartDao {
+    }
 }

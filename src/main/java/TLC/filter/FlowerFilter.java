@@ -18,13 +18,11 @@ import java.io.IOException;
         initParams = { @WebInitParam(name = "loginPage", value = "Login.jsp") },
         dispatcherTypes = { DispatcherType.REQUEST, DispatcherType.FORWARD })
 public class FlowerFilter implements Filter {
-
     private String loginPage = "Login.jsp";
 
     public FlowerFilter() {
 
     }
-
 
     public void init(FilterConfig filterConfig) throws ServletException {
 

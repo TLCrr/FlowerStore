@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns="/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;//Java的序列化机制是通过判断类的serialVersionUID来验证版本一致性的
 	UserDao userDao = new UserDaoimpl();
     public RegisterServlet() {
         super();

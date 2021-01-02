@@ -2,6 +2,7 @@ package TLC.dao.impl;
 
 import TLC.Util.JDBCUtil;
 import TLC.dao.FlowerDao;
+import TLC.pojo.CartList;
 import TLC.pojo.Flower;
 
 import java.sql.*;
@@ -127,21 +128,22 @@ public class FlowerDaoimpl implements FlowerDao {
     }
 
 
-    public List<Flower> Findflowerbyusername(String username) {
+
+
+    public List<CartList> Findflowerbyusername(String username) {
         sum=0;
-        Flower flower;
-        List<Flower> list=new ArrayList<Flower>();
-        String sql="select flower_name,flower_price from shopping_cart where username=?";
+        List<CartList> list=new ArrayList<CartList>();
+        String sql="select shopping_id,flower_name,flower_price from shopping_cart where username=?";
         conn=JDBCUtil.getConn();
         try {
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1, username);
             rs=pstmt.executeQuery();
             while(rs.next()){
-                flower = new Flower(rs.getString("flower_name"),
+                CartList cartList= new CartList(rs.getInt("shopping_id"),rs.getString("flower_name"),
                         rs.getInt("flower_price"));
-                sum+=flower.getFlower_price();
-                list.add(flower);
+                sum+=cartList.getFlower_price();
+                list.add(cartList);
             }
         } catch (SQLException e) {
             e.printStackTrace();

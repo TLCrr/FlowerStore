@@ -43,6 +43,9 @@
                                 <thead>
                                 <tr>
                                     <th>
+                                        订单号
+                                    </th>
+                                    <th>
                                         姓名
                                     </th>
                                     <th>
@@ -52,8 +55,9 @@
                                         手机号
                                     </th>
                                     <th>
-                                        微信号
+                                       微信号
                                     </th>
+
                                     <th>
                                         地址
                                     </th>
@@ -70,7 +74,9 @@
                                 </thead>
                                 <tbody id="tUser">
                                 <c:forEach items="${sessionScope.orderList}" var="u">
+
                                     <tr>
+                                        <td>${u.order_id}</td>
                                         <td>${u.cus_name}</td>
                                         <td>${u.cus_sex}</td>
                                         <td>${u.cus_phone}</td>

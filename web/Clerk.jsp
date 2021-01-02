@@ -46,7 +46,7 @@
                     <li>
                         <span>在线人数：<%=application.getAttribute("peopleOnline")%></span>
                     </li>
-                    <li>店主</li>
+                    <li>  店主</li>
                     <li class="dropDown dropDown_hover">
                         <a href="#" class="dropDown_A">${sessionScope.SESSION_user.username}</a>
                         <ul class="dropDown-menu menu radius box-shadow">
@@ -101,7 +101,6 @@
                     <li>
                         <a data-href="finduser.jsp" data-title="查询用户" href="javascript:void(0)">查询用户</a>
                     </li>
-
                 </ul>
             </dd>
         </dl>

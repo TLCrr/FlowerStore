@@ -58,6 +58,9 @@
                                     <tr>
                                         <td>${u.flower_name}</td>
                                         <td>${u.flower_price}</td>
+                                        <td>
+                                            <a href="DeleteShopping_cartServlet?method=deleteshopping_cart&shoping_id=${u.shoping_id}&username=${sessionScope.SESSION_user.username}">删除</a>
+                                            </td>
 <%--                                        <td><a href="OrderServlet?order_id=1&amp;method=delete">删除</a></td>--%>
                                     </tr>
                                 </c:forEach>

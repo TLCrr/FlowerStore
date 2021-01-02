@@ -2,6 +2,7 @@ package TLC.servlet;
 
 import TLC.dao.FlowerDao;
 import TLC.dao.impl.FlowerDaoimpl;
+import TLC.pojo.CartList;
 import TLC.pojo.Flower;
 import TLC.pojo.User;
 
@@ -22,11 +23,12 @@ public class FlowerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        String method=request.getParameter("method"); //String actionCode=request.getParameter("actionCode");//接收actionCode的值，并赋给jspServlet中的actionCode变量，此时变量值为user
+        String method=request.getParameter("method");
+        //String actionCode=request.getParameter("actionCode");//接收actionCode的值，并赋给jspServlet中的actionCode变量，此时变量值为user
         if("show".equals(method)){
             show(request,response);
         }
-        else if("add".equals(method))
+        else if("add".equals(method))//添加到购物车
         {
             add(request,response);
         }
@@ -68,6 +70,7 @@ public class FlowerServlet extends HttpServlet {
         if (count > 0) {
             List<Flower> list1 = flowerdao.showflower();
             request.getSession().setAttribute("flowerList", list1);
+           // session对象赋值和得到对象属性的值
         }
         request.getRequestDispatcher("flower1.jsp").forward(request, response);
     }
@@ -87,17 +90,18 @@ public class FlowerServlet extends HttpServlet {
         String username=request.getParameter("username");//当前用户的用户名
         Flower flower=flowerdao.Findflower(flower_id);//先根据鲜花ID找到鲜花的名字和价格
         int count=flowerdao.addcart(flower,username);//将鲜花名、价格还有用户名加入购物车的表中
-        if(count>0)
+        /*if(count>0)
         {
             List<Flower> list=flowerdao.Findflowerbyusername(username);
             request.getSession().setAttribute("cartList", list);
-        }
+        }*/
         request.getSession().setAttribute("sum",new FlowerDaoimpl().getSum());
-        request.getRequestDispatcher("shopping_cart.jsp").forward(request, response);
+      //  request.getRequestDispatcher("shopping_cart.jsp").forward(request, response);
+        showcart(request,response);
     }
     private void show(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
         List<Flower> list1=flowerdao.showflower();
-        request.getSession().setAttribute("flowerList", list1);
+        request.getSession().setAttribute("flowerList", list1);//show中的list存储到flowerlist中
         request.getRequestDispatcher("flower.jsp").forward(request, response);//方法传入jsp不改变界面
     }
     private void updateflower(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
@@ -125,7 +129,7 @@ public class FlowerServlet extends HttpServlet {
     }
     private void showcart(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
         String username=request.getParameter("username");
-        List<Flower> list=flowerdao.Findflowerbyusername(username);
+        List<CartList> list=flowerdao.Findflowerbyusername(username);
         request.getSession().setAttribute("cartList", list);
         request.getRequestDispatcher("shopping_cart.jsp").forward(request, response);
     }

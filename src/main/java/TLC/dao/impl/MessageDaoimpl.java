@@ -36,7 +36,7 @@ public class MessageDaoimpl implements MessageDao {
         return list2;
     }
 
-
+//    String sql="insert into messages(cus_username,content) values(?,?)";
     public int addMessage(Message message) {
         String sql="insert into messages(cus_username,content) values(?,?)";
         conn= JDBCUtil.getConn();//获取连接对象
