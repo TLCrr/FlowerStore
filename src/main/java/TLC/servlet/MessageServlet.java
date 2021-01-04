@@ -29,7 +29,7 @@ public class MessageServlet extends HttpServlet {
             add(request,response);
     }
     private void show(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
-        List<Message> list2=messagedao.findMessage();//?
+        List<Message> list2=messagedao.findMessage();//
         request.getSession().setAttribute("messageList", list2);
         request.getRequestDispatcher("message.jsp").forward(request, response);
     }

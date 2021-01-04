@@ -24,8 +24,8 @@ public class change_passwordServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String password=request.getParameter("password");
         String password1=request.getParameter("password1");
-        User username1=(User)request.getSession().getAttribute("SESSION_user");//获取sessionde 值
-        String username=username1.getUsername();
+        User user1=(User)request.getSession().getAttribute("SESSION_user");//获取sessionde 值
+        String username=user1.getUsername();
        // request.getSession().setAttribute("user", user);
         // request.getSession().setAttribute("user", user);
         //新request.getParameter("username");
@@ -36,6 +36,6 @@ public class change_passwordServlet extends HttpServlet {
             List<User> list=userdao.findUser();
             request.getSession().setAttribute("userList", list);
         }
-        request.getRequestDispatcher("change_password.jsp").forward(request, response);
+        request.getRequestDispatcher("user.jsp").forward(request, response);
     }}
 }

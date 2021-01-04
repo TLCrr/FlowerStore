@@ -70,7 +70,7 @@ public class FlowerDaoimpl implements FlowerDao {
 
 
     public int addflower(Flower flower) {
-        String sql="insert into flowers(flower_picture,flower_name,flower_price,flower_date) values(?,?,?,?)";
+        String sql="insert into flower.getFlower_picture(),flower.getFlower_name(),flower.getFlower_price(), flower.getFlower_date() values(?,?,?,?)";
         conn=JDBCUtil.getConn();//获取连接对象
         try {
             pstmt=conn.prepareStatement(sql);//
@@ -173,7 +173,7 @@ public class FlowerDaoimpl implements FlowerDao {
     }
     public List<Flower> showcart() {
         List<Flower> list1=new ArrayList<Flower>();
-        List<Integer> list2=new ArrayList<Integer>();
+//        List<Integer> list2=new ArrayList<Integer>();
         String sql="select flower_name,flower_price from shopping_cart";
         conn= JDBCUtil.getConn();//获得连接对象
         Flower flower;
@@ -182,9 +182,7 @@ public class FlowerDaoimpl implements FlowerDao {
             rs=pstmt.executeQuery();//检索
             while(rs.next())
             {
-                flower=new Flower(rs.getString("flower_name"),
-                        rs.getInt("flower_price")
-                        );
+                flower=new Flower(rs.getString("flower_name"),rs.getInt("flower_price"));
                 list1.add(flower);//将值存到集合里面
             }
         } catch (SQLException e) {

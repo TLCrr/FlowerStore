@@ -16,7 +16,8 @@ import java.io.IOException;
 @WebFilter(
         urlPatterns = { "/Clerk.jsp","/customer.jsp" },
         initParams = { @WebInitParam(name = "loginPage", value = "Login.jsp") },
-        dispatcherTypes = { DispatcherType.REQUEST, DispatcherType.FORWARD })
+        dispatcherTypes = { DispatcherType.REQUEST, DispatcherType.FORWARD }
+        )
 public class FlowerFilter implements Filter {
     private String loginPage = "Login.jsp";
 
@@ -45,6 +46,7 @@ public class FlowerFilter implements Filter {
         if (session.getAttribute("SESSION_user") == null) {
             // 获取被拦截的请求地址及参数
             String requestPath = req.getRequestURI();
+
             if (req.getQueryString() != null) {
                 requestPath += "?" + req.getQueryString();
             }

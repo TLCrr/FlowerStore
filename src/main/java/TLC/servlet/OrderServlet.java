@@ -47,6 +47,7 @@ public class OrderServlet extends HttpServlet {
         }
         request.getRequestDispatcher("order.jsp").forward(request, response);
     }
+    //添加用户
     private void add(HttpServletRequest request, HttpServletResponse response, String test)  throws ServletException, IOException {
         String cus_name=request.getParameter("cus_name");
         String cus_sex=request.getParameter("cus_sex");

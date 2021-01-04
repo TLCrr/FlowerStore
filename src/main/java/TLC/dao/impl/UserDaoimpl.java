@@ -31,16 +31,17 @@ public class UserDaoimpl implements UserDao {
 		return count;
 	}
 	public int login(User user) {
-		String sql="select count(1) as cnum from login where username=? and password=?";
+		String sql="select * from login where username=? and password=?";
 		conn= JDBCUtil.getConn();
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUsername());
 			pstmt.setString(2, user.getPassword());
 			rs=pstmt.executeQuery();
+
 			if(rs.next())
-			{
-				count=rs.getInt("cnum");
+			{count=1;
+				//=rs.getInt("cnum");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -57,6 +58,7 @@ public class UserDaoimpl implements UserDao {
 		try {
 			pstmt=conn.prepareStatement(sql);//创建执行命令对象
 			rs=pstmt.executeQuery();//检索
+
 			while(rs.next())
 			{
 				User user=new User(rs.getInt("uid"),rs.getString("username"),rs.getString("password"));
@@ -71,45 +73,6 @@ public class UserDaoimpl implements UserDao {
 		return list;
 	}
 
-//	public int findUserName(String username) {
-////		count=0;
-////		String sql="select * from login where username=?";
-////		conn=JDBCUtil.getConn();//获得连接对象
-////		try {
-////			pstmt=conn.prepareStatement(sql);//创建执行命令对象
-////			rs=pstmt.executeQuery();//检索
-////			while(rs.next())
-////			{
-////				count++;
-////			}
-////		} catch (SQLException e) {
-////			e.printStackTrace();
-////		}finally//无论怎样都要关闭数据库
-////		{
-////			JDBCUtil.closeAll(conn, rs, pstmt, stmt);
-////		}
-////		return count;
-//
-//		int count=0;
-//		String sql="select * from login where username=?";
-//		conn= JDBCUtil.getConn();
-//		try {
-//			pstmt=conn.prepareStatement(sql);
-//			pstmt.setString(1, username);
-//			rs=pstmt.executeQuery();
-//			if(rs.next())
-//			{
-//			count=1;
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}finally
-//		{
-//			JDBCUtil.closeAll(conn, rs, pstmt, stmt);
-//		}
-//		return count;
-//
-//	}
 
 
 	public int deleteUser(int uid)
@@ -136,8 +99,8 @@ public class UserDaoimpl implements UserDao {
 		conn= JDBCUtil.getConn();//获取连接对象
 		try {
 			pstmt=conn.prepareStatement(sql);//
-			pstmt.setString(1, user.getUsername());//??????????
-			pstmt.setString(2, user.getPassword());//??????????
+			pstmt.setString(1, user.getUsername());//
+			pstmt.setString(2, user.getPassword());//
 			count=pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

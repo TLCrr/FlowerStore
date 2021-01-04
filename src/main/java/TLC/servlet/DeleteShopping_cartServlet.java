@@ -20,18 +20,13 @@ import java.util.List;
 
 @WebServlet(urlPatterns="/DeleteShopping_cartServlet")
 public class DeleteShopping_cartServlet extends HttpServlet{
-
-
     Shopping_cartimpl Shopping_cartSdao=new Shopping_cartimpl();//实现功能的对象
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            request.setCharacterEncoding("UTF-8");
-            response.setContentType("text/html;charset=UTF-8");
             doPost(request, response);
         }
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             request.setCharacterEncoding("UTF-8");
             response.setCharacterEncoding("UTF-8");
-
             String method=request.getParameter("method");
             if("deleteshopping_cart".equals(method)){
                 delete(request,response);
@@ -53,7 +48,6 @@ public class DeleteShopping_cartServlet extends HttpServlet{
 
             PrintWriter writer = response.getWriter();
             writer.write("<script>");
-//            writer.write(" alert('删除成功！');");
             writer.write("window.location.href='shopping_cart.jsp'");
             writer.write("</script>");
             writer.flush();

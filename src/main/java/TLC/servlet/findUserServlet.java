@@ -28,9 +28,9 @@ public class findUserServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         showDetail(request,response);
-        //
-    }
 
+    }
+//查找用户
     private void showDetail(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
         String username=request.getParameter("username");
         User user=userdao.showUserByUsername(username);

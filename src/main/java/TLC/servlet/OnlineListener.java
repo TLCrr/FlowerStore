@@ -8,8 +8,7 @@ import javax.servlet.http.HttpSessionListener;
 @WebListener()
 public class OnlineListener implements HttpSessionListener {
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
-//        request.setCharacterEncoding("UTF-8");//设置服务器端的编码
-//        response.setCharacterEncoding("UTF-8");
+
         System.out.println("session产生了");
         ServletContext context = httpSessionEvent.getSession().getServletContext();//application全局
         Integer count = (Integer) context.getAttribute("peopleOnline");

@@ -39,7 +39,7 @@
                         <label for="user-name" class="am-u-sm-3 am-form-label">
                             上传花朵图片
                         </label>
-                        <input type="file" name="fileupload">
+                        <input type="file" name="fileupload" >
 <%--                        <div class="am-u-sm-9">--%>
 <%--                            <input id="roleName4" required="" placeholder="请输入手机号" value="" name="flower_picture" type="text">--%>
 <%--                        </div>--%>
