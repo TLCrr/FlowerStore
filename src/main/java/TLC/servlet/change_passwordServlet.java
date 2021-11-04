@@ -26,9 +26,7 @@ public class change_passwordServlet extends HttpServlet {
         String password1=request.getParameter("password1");
         User user1=(User)request.getSession().getAttribute("SESSION_user");//获取sessionde 值
         String username=user1.getUsername();
-       // request.getSession().setAttribute("user", user);
-        // request.getSession().setAttribute("user", user);
-        //新request.getParameter("username");
+
         if(password!=password1){
         int count= userdao.update_password(password,password1,username);//password是新密码，password1是旧密码
         if(count>0)
